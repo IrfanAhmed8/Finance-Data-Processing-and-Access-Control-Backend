@@ -9,24 +9,107 @@
     {
       "name": "insert record as admin",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "role",
+            "value": "admin",
+            "type": "text"
+          },
+          {
+            "key": "user-id",
+            "value": "69cf59fc3cf77d4f1252be3c",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 5000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"notes\": \"monthly salary\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ]
+        }
       },
       "response": []
     },
     {
       "name": "Insert As Viewer(error check)",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "role",
+            "value": "analyst",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 50000,\r\n  \"type\": \"income\",\r\n  \"category\": \"house rent\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "users"
+          ]
+        }
       },
       "response": []
     },
     {
       "name": "Create User",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "POST",
+        "header": [
+          {
+            "key": "role",
+            "value": "analyst",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@example.com\",\r\n  \"role\": \"admin\",\r\n  \"status\": \"active\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "users"
+          ]
+        }
       },
       "response": []
     },
@@ -40,12 +123,12 @@
         "header": [
           {
             "key": "user-id",
-            "value": "69cf574bb71da012e26f22af",
+            "value": "69cf59e53cf77d4f1252be36",
             "type": "text"
           },
           {
-            "key": "role",
-            "value": "analyst",
+            "key": "",
+            "value": "",
             "type": "text"
           }
         ],
@@ -59,14 +142,14 @@
           }
         },
         "url": {
-          "raw": "http://localhost:5000/getSummary/",
+          "raw": "http://localhost:5000/summary/",
           "protocol": "http",
           "host": [
             "localhost"
           ],
           "port": "5000",
           "path": [
-            "getSummary",
+            "summary",
             ""
           ]
         }
@@ -77,23 +160,100 @@
       "name": "ViewAllRecords",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [
+          {
+            "key": "role",
+            "value": "viewer",
+            "type": "text"
+          },
+          {
+            "key": "user-id",
+            "value": "69cf59e53cf77d4f1252be36",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ]
+        }
       },
       "response": []
     },
     {
       "name": "update as admin",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "role",
+            "value": "admin",
+            "type": "text"
+          },
+          {
+            "key": "user-id",
+            "value": "69cf59e53cf77d4f1252be36",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"amount\":56000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/records/69cf65432c2849a71a0e759e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records",
+            "69cf65432c2849a71a0e759e"
+          ]
+        }
       },
       "response": []
     },
     {
       "name": "delete record as admin",
       "request": {
-        "method": "GET",
-        "header": []
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "role",
+            "value": "admin",
+            "type": "text"
+          },
+          {
+            "key": "user-id",
+            "value": "69cf59e53cf77d4f1252be36",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/records/69cf307ce77f6237a8671503",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records",
+            "69cf307ce77f6237a8671503"
+          ]
+        }
       },
       "response": []
     },
@@ -101,7 +261,36 @@
       "name": "filter record by category",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [
+          {
+            "key": "user-id",
+            "value": "69cf574bb71da012e26f22af",
+            "type": "text"
+          },
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/records?category=Tution Fee",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Tution Fee"
+            }
+          ]
+        }
       },
       "response": []
     },
@@ -109,7 +298,30 @@
       "name": "filter record by type",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [
+          {
+            "key": "user-id",
+            "value": "69cf574bb71da012e26f22af",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/records?type=income",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "income"
+            }
+          ]
+        }
       },
       "response": []
     },
@@ -117,7 +329,34 @@
       "name": "filter(type and category",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [
+          {
+            "key": "user-id",
+            "value": "69cf574bb71da012e26f22af",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/records?type=expense&category=food",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "records"
+          ],
+          "query": [
+            {
+              "key": "type",
+              "value": "expense"
+            },
+            {
+              "key": "category",
+              "value": "food"
+            }
+          ]
+        }
       },
       "response": []
     }
