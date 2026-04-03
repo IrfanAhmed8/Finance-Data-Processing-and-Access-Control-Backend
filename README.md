@@ -165,7 +165,7 @@ A Postman collection is included in the repository for testing the APIs. Import 
 You can test all API endpoints using the provided Postman collection.
 
 Download it from here:
-[Download Postman Collection](./postman/Finance-Backend.postman_collection.json)
+[Download Postman Collection](https://github.com/IrfanAhmed8/Finance-Data-Processing-and-Access-Control-Backend/blob/main/postman/Finance-Backend.postman_collection.json)
 
 Steps to use:
 1. Open Postman
