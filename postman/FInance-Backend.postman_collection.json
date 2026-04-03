@@ -7,7 +7,7 @@
   },
   "item": [
     {
-      "name": "insert as admin",
+      "name": "insert record as admin",
       "request": {
         "method": "GET",
         "header": []
